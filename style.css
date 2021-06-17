@@ -1,0 +1,518 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+html,body{
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+}
+.main-v{
+    max-width: 100%;
+    height: auto;
+    position: relative;
+}
+.menu-btn{
+    position: fixed;
+    top: 10px;
+    right: 15%;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background: #3584bb;
+    display: none;
+
+}
+.menu-btn span,
+.menu-btn span::before,
+.menu-btn span::after{
+    content: "";
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background: #fff;
+    position: absolute;
+}
+.menu-btn span::before{
+    bottom: 8px;
+}
+.menu-btn span::after{
+    top: 8px;
+}
+#menu-btn-check:checked ~ .menu-btn span{
+    background: rgba(255, 255, 255, 0);
+}
+#menu-btn-check:checked ~ .menu-btn span::before{
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after{
+    top: 0;
+    transform: rotate(-45deg);
+}
+#menu-btn-check{
+    display: none;
+}
+.hanbaga{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left:100%;
+    top: 0%;
+    z-index: 80;
+    background: #3584bb;
+    transition: all 0.5s;
+}
+#menu-btn-check:checked ~ .hanbaga{
+    left: 0;
+}
+.hanbaga ul{
+    padding: 70px 10px 0;
+}
+.hanbaga ul li{
+    border-bottom: 1px solid #fff;
+}
+.hanbaga ul li a{
+    display: block;
+    width: 100%;
+    color: #fff;
+    font-size: 15px;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+.hanbaga ul li a::before{
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 16px;
+    right: 11px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 11;
+    width: 100%;
+    height: 100px;
+}
+ul{
+    list-style: none;
+}
+nav ul{
+    display: flex;
+    color: #000;
+    font-size: 20px;
+}
+nav ul li a:hover{
+    color: #000;
+}
+nav ul li{
+    padding: 0 20px;
+}
+.logo img{
+    width: 50px;
+    height: 50px;
+    bottom: 10px;
+}
+.logo p{
+    text-align: center;
+    padding-top: 0;
+}
+header{
+    width: 100%;
+    height: 800px;
+}
+section{
+    position: relative;
+}
+.album {
+	margin: auto;
+	background-color: white;
+	position: relative;
+    height: 800px;
+}
+
+.album img {
+	max-width: 100%;
+	animation-name: album;
+	-webkit-animation-name: album;
+	animation-duration: 10s;
+	-webkit-animation-duration: 10s;
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	opacity: 0;
+}
+
+.album .img1 {
+	display: block;
+	margin: 0 auto;
+}
+
+.album .img2 {
+	animation-delay:5s;
+	-webkit-animation-delay:5s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.album .img3{
+    animation-delay: 10s;
+    -webkit-animation-delay: 10s;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+@keyframes album {
+	0% {
+		opacity: 0;
+	}
+	
+	12.5% {
+		opacity: 1;
+	}
+
+	37.5% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes album {
+	0% {
+		opacity: 0;
+	}
+	
+	12.5% {
+		opacity: 1;
+	}
+
+	37.5% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}
+.slider{
+    position: relative;
+    width: 100%;
+    height: 800px;
+    z-index: 10;
+    background: #fff;
+    opacity: 0.5;
+}
+.main{
+    max-width: 100%;
+    height: auto;
+    margin: 50px auto 0;
+    background: #fff;
+}
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+.introduction{
+    letter-spacing: 5px;
+    line-height: 30px;
+}
+.introduction h2{
+    margin-top: 30px;
+}
+.introduction p{
+    margin-top: 30px;
+}
+span{
+    display: flex;
+    justify-content: center;
+    letter-spacing: 5px;
+}
+.product{
+    width: 100%;
+    height: auto;
+    margin:50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.syouhin{
+    width:250px;
+    height: 250px;
+    position: relative;  
+    border: 5px solid #fff;  
+}
+.syouhin .name{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.syouhin img{
+    display: block;
+    width: 250px;
+    height: 250px;
+}
+.syouhin .name:hover{
+    opacity: 1;
+    transition: all 0.6s ease;
+}
+.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+}
+.grid{
+    margin-left: 50px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+.item .btn{
+    max-width: 200px;
+    margin: 30px auto 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+a.btn1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    width: 100%;
+    height: 70px;
+    padding:0 25px;
+    color: #000;
+    font-size: 16px;
+    text-align: left;
+    text-decoration: none;
+    position: relative;
+    transition-duration: 0.2s;
+}
+a.btn1:hover{
+    background: #000;
+    border: 1px solid #000;
+    color: #fff;
+}
+a.btn1 span{
+    position: absolute;
+    bottom: 12px;
+    right: 20px;
+    display: inline-block;
+}
+a.btn1 span::before{
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -8px;
+}
+a.btn1::after{
+    content: "";
+    width: 6px;
+    height: 6px;
+    border: 0;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    margin-top: -3px;
+}
+
+.item{
+    position: relative;
+}
+.contact .btn{
+    width: 80%;
+    margin: 30px auto 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    background: url(images/inter.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+.contact .a{
+    color: #fff;
+    padding-bottom: 20px;
+}
+.contact p{
+    color: #fff;
+    padding-bottom: 20px;
+    line-height: 1.5;
+}
+.contact .btn .c{
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.contact .toumei{
+    background: rgba(0, 0, 0, 0.5);
+    height: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+footer{
+    background: #000;
+    width: 100%;
+    margin: 50px auto 0;
+    height: 300px;
+    color: #fff;
+    position: relative;
+}
+.menu{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+footer .btn{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+footer h2{
+    text-align: center;
+}
+footer ul{
+    line-height: 50px;
+    letter-spacing: 10px;
+    margin-left: 70px;
+    margin-right: 70px;
+    font-weight: 700;
+    font-size: 20px;
+}
+.sns {
+    margin-top: 45px;
+}
+footer .btn{
+    position: absolute;
+    right: 40%;
+    bottom: 5%;
+    text-decoration: none;
+    color: #fff;
+    width: 150px;
+    max-width: 200px;
+    height: auto;
+    border: 1px solid #fff;
+}
+footer .btn:hover{
+    background: #fff;
+    color: #000;
+    transition: all 0.5s ease;
+}
+@media screen and (max-width:484px){
+    .menu-btn{
+        display: block;
+    }
+    nav{
+        width: 80%;
+    }
+    nav ul li a{
+        display: none;
+    }
+    nav ul{
+        margin-right: 20%;
+    }
+    .logo{
+        margin-left: 10%;
+    }
+    .album{
+        height: 300px;
+    }
+    .slider{
+        height: 300px;
+    }
+    header{
+        height: 300px;
+    }
+    .about{
+        margin-top: 0;
+        font-size: 12px;
+    }
+    .about h1{
+        font-size: 18px;
+    }
+    .introduction{
+        letter-spacing: 1px;
+    }
+    .main{
+        margin-top: 0;
+    }
+    .syouhin{
+        width: 50%;
+    }
+    .grid{
+        margin-left: 0;
+    }
+    .item img{
+        width: 100%;
+    }
+    .contact .btn{
+        width: 100%;
+    }
+    .contact .btn .c{
+        left: 23%;
+        top: 30%;
+    }
+    .c h1{
+        font-size: 18px;
+    }
+    .product h1{
+        font-size: 18px;
+        font-weight: bold;
+    }
+    footer ul{
+        margin: 0;
+        letter-spacing: 1px;
+        font-weight: 500;
+    }
+    .menu-btn span{
+        top: 45%;
+        right: 28%;
+    }
+}
